@@ -6,6 +6,7 @@ from open_deep_research.graph import builder
 from langgraph.types import Command
 from dotenv import load_dotenv
 
+load_dotenv()
 
 async def process_graph():
     memory = MemorySaver()
