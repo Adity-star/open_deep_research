@@ -40,3 +40,24 @@ class Feedback(BaseModel):
     follow_up_queries: List[SearchQuery] = Field(
         description="List of follow-up search queries.",
     )
+
+
+class ReportState(TypedDict):
+    topic: str    
+    feedback_on_report_plan: str 
+    sections: list[Section] 
+    completed_sections: Annotated[list, operator.add] # Send() API key
+    report_sections_from_research: str # String of any completed sections from research to write final sections
+    final_report: str # Final report
+
+class SectionState(TypedDict):
+    topic: str #
+    section: Section  
+    search_iterations: int 
+    search_queries: list[SearchQuery] 
+    source_str: str 
+    report_sections_from_research: str # String of any completed sections from research to write final sections
+    completed_sections: list[Section] # Final key we duplicate in outer state for Send() API
+
+class SectionOutputState(TypedDict):
+    completed_sections: list[Section] # Final key we duplicate in outer state for Send() API

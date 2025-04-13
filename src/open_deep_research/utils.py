@@ -174,7 +174,7 @@ Section {idx}: {section.name}
 
 @tracable
 async def tavily_search_async(search_queries: List[str]) -> List[dict]:
-     """
+    """
     Performs concurrent web searches using the Tavily API.
 
     Args:
@@ -336,8 +336,7 @@ async def arvix_search_async(search_queries,
     return search_docs
 
 
-from ddgs import DDGS
-import asyncio
+
 
 @traceable
 async def duckduckgo_search(search_queries):
