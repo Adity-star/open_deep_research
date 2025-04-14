@@ -47,7 +47,7 @@ class ReportState(TypedDict):
     feedback_on_report_plan: str 
     sections: list[Section] 
     completed_sections: Annotated[list, operator.add] # Send() API key
-    report_sections_from_research: str # String of any completed sections from research to write final sections
+    report_sections_from_research: str 
     final_report: str # Final report
 
 class SectionState(TypedDict):
@@ -56,8 +56,8 @@ class SectionState(TypedDict):
     search_iterations: int 
     search_queries: list[SearchQuery] 
     source_str: str 
-    report_sections_from_research: str # String of any completed sections from research to write final sections
-    completed_sections: list[Section] # Final key we duplicate in outer state for Send() API
+    report_sections_from_research: str 
+    completed_sections: list[Section] 
 
 class SectionOutputState(TypedDict):
-    completed_sections: list[Section] # Final key we duplicate in outer state for Send() API
+    completed_sections: list[Section] 
